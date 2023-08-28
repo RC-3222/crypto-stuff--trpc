@@ -1,4 +1,4 @@
-import { PropsWithChildren, createContext, useReducer, useState } from 'react'
+import { PropsWithChildren, createContext, useCallback, useReducer, useState } from 'react'
 import { ActionType, PortfolioReducer } from './reducer'
 import { PortfolioItem } from '../../types'
 import { useTRPC } from '../../hooks'
@@ -29,30 +29,30 @@ export const PortfolioContextProvider = ({ children }: PropsWithChildren) => {
     const [state, dispatch] = useReducer(PortfolioReducer, initialState)
     const [isUpdating, setIsUpdating] = useState(false)
 
-    const { getCurrState, getPrevState, getCoinPortfolioInfo } = useTRPC()
+    const { getCurrPortfolioState, getPrevPortfolioState, getCoinPortfolioInfo } = useTRPC()
 
-    const init = async () => {
+    const init = useCallback(async () => {
         setIsUpdating(true)
-        const prevState = getPrevState()
-        const currState = await getCurrState(prevState)
+        const prevState = getPrevPortfolioState()
+        const currState = await getCurrPortfolioState(prevState)
 
         dispatch({ type: ActionType.Init, payload: { currState, prevState } })
 
         setIsUpdating(false)
-    }
+    }, [getPrevPortfolioState, getCurrPortfolioState])
 
 
-    const refreshPriceDiff = async (wasUpdating = false) => {
+    const refreshPriceDiff = useCallback(async (wasUpdating = false) => {
         if (!wasUpdating) setIsUpdating(true)
 
-        const currState = await getCurrState(state.prevState)
+        const currState = await getCurrPortfolioState(state.prevState)
         dispatch({ type: ActionType.UpdateCurrState, payload: currState })
 
         if (!wasUpdating) setIsUpdating(false)
-    }
+    }, [getCurrPortfolioState, state.prevState])
 
 
-    const addItem = async (id: string, amount: number) => {
+    const addItem = useCallback(async (id: string, amount: number) => {
         setIsUpdating(true)
 
         const [portfolioItem] = await Promise.all([
@@ -68,10 +68,10 @@ export const PortfolioContextProvider = ({ children }: PropsWithChildren) => {
         dispatch({ type: ActionType.AddItem, payload: portfolioItem })
 
         setIsUpdating(false)
-    }
+    }, [getCoinPortfolioInfo, refreshPriceDiff])
 
 
-    const removeItem = async (id: string) => {
+    const removeItem = useCallback(async (id: string) => {
         setIsUpdating(true)
 
         await refreshPriceDiff(true)
@@ -79,7 +79,7 @@ export const PortfolioContextProvider = ({ children }: PropsWithChildren) => {
         dispatch({ type: ActionType.RemoveItem, payload: id })
 
         setIsUpdating(false)
-    }
+    }, [refreshPriceDiff])
 
 
     return (

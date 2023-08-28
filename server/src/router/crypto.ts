@@ -129,7 +129,7 @@ export const cryptoRouter = router({
 
                 return {data: res.data.map((item, ind) => ({
                     id:item.id, 
-                    name:item.name, 
+                    name:`${item.name}${item.symbol ? ` (${item.symbol})` : ''}`, 
                     priceUsd:+item.priceUsd,
                     amount:prevData[ind].amount,
                 } as PortfolioItem))}

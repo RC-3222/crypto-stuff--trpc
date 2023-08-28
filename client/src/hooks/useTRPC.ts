@@ -17,18 +17,6 @@ export const useTRPC = () => {
         }
     }, [trpcContext])
 
-
-    const getUpdatedPortfolioData = useCallback(async (state: PortfolioItem[]) => {
-        try {
-            const { data } = await trpcContext.crypto.getUpdatedPortfolioData.fetch(state);
-            return data as PortfolioItem[]
-        } catch (err) {
-            console.error(err)
-            return [] as PortfolioItem[]
-        }
-    }, [trpcContext])
-    
-
     const getCoinPortfolioInfo = useCallback(async (id: string, amount: number) => {
         const coinData = await getCoinInfo(id)
 
@@ -44,14 +32,18 @@ export const useTRPC = () => {
         return newPortfolioItemInfo
     }, [getCoinInfo])
 
-    const getCurrState = useCallback(async (prevState: PortfolioItem[]) => {
-        const currState = await getUpdatedPortfolioData(prevState)
+    const getCurrPortfolioState = useCallback(async (prevState: PortfolioItem[]) => {
+        try {
+            const { data } = await trpcContext.crypto.getUpdatedPortfolioData.fetch(prevState);
+            return data as PortfolioItem[]
+        } catch (err) {
+            console.error(err)
+            return [] as PortfolioItem[]
+        }
+    }, [trpcContext])
 
-        return currState
-    }, [getUpdatedPortfolioData])
 
-
-    const getPrevState = useCallback(() => {
+    const getPrevPortfolioState = useCallback(() => {
         const prevState: PortfolioItem[] = localStorage.prevState
             ? JSON.parse(localStorage.prevState)
             : new Array<PortfolioItem>()
@@ -95,8 +87,8 @@ export const useTRPC = () => {
     }, [trpcContext])
 
     return {
-        getCurrState,
-        getPrevState,
+        getCurrPortfolioState,
+        getPrevPortfolioState,
         getCoinPortfolioInfo,
         getFullCoinData,
         getTopCoinData,

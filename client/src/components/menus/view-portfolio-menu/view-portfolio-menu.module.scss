@@ -1,0 +1,19 @@
+.list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    gap: 1rem;
+
+    &__item {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 0.5rem;
+        }
+    }
+}

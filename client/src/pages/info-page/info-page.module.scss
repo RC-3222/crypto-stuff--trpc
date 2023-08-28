@@ -1,0 +1,26 @@
+@use '../../scss/mixins' as *;
+
+.noCoinInfo {
+    width: min(520px, 100%);
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    align-items: center;
+}
+
+.title {
+    @include h2;
+}
+
+.price,
+.historyTitle {
+    @include h3;
+}
+
+.avgPrice,
+.supply {
+    @include h4;
+}

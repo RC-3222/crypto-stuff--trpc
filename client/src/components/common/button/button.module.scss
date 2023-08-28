@@ -1,0 +1,24 @@
+@use '../../../scss/mixins' as *;
+@use '../../../scss/variables' as *;
+
+.btn {
+    border-radius: 8px;
+    color: $clr--white;
+    border: 1px solid;
+    cursor: pointer;
+    padding: 8px 16px;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-size: min(0.875rem, 4.2vw);
+    transition:
+        background-color 250ms ease-in-out,
+        border-color 250ms;
+}
+
+.green {
+    @include button-color($clr--green, 10%);
+}
+
+.red {
+    @include button-color($clr--danger, 10%);
+}

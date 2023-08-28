@@ -1,0 +1,13 @@
+{
+  "name": "crypto-stuff",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "concurrently \"npm run --prefix ./server start\" \"npm run --prefix ./client start\""
+  },
+  "author": "random",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}

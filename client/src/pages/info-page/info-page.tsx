@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react'
+import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { CoinInfo, HistoryItem } from '../../types'
 import { useState } from 'react'
@@ -10,7 +10,7 @@ import styles from './info-page.module.scss'
 import { Loader } from '../../components/common/loader'
 import { coinNameStr } from '../../utils'
 
-import { trpcReact } from '../../trpc'
+import { useTRPC } from '../../hooks'
 
 export const InfoPage = () => {
     const params = useParams()
@@ -22,25 +22,12 @@ export const InfoPage = () => {
 
     const [isLoading, setIsLoading] = useState(true)
 
-    const trpcContext = trpcReact.useContext()
-
-    const getData = useCallback(async (coinId: string) => {
-        try {
-            const [{ data: CoinInfo }, { data: coinHistory }] = await Promise.all([
-                trpcContext.crypto.getCoinInfo.fetch(coinId),
-                trpcContext.crypto.getCoinHistory.fetch(coinId)
-            ])
-            return [CoinInfo, coinHistory] as [CoinInfo | null, HistoryItem[]]
-        } catch (err) {
-            console.error(err)
-            return [null, new Array<HistoryItem>()] as [CoinInfo | null, HistoryItem[]]
-        }
-    }, [trpcContext])
+    const {getFullCoinData} = useTRPC()
 
     const loadInfo = async () => {
         setIsLoading(true)
         const coinId = params.coinId as string
-        const [coinInfo, coinHistory] = await getData(coinId)
+        const [coinInfo, coinHistory] = await getFullCoinData(coinId)
         setMainInfo(coinInfo)
         setHistoryInfo(coinHistory)
         setIsLoading(false)

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import { CoinInfo } from '../../types'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Button } from '../../components/common/button'
@@ -7,8 +7,7 @@ import styles from './main-page.module.scss'
 import { CoinList } from '../../components/coin-list'
 import { Loader } from '../../components/common/loader'
 
-import { trpcReact } from '../../trpc'
-import { ITEMS_PER_PAGE } from '../../constants'
+import { useTRPC } from '../../hooks'
 
 export const MainPage = () => {
     const [currentCoins, setCurrentCoins] = useState<CoinInfo[]>([])
@@ -23,25 +22,15 @@ export const MainPage = () => {
 
     const [currPage, setCurrPage] = useState(0)
 
-    const trpcContext = trpcReact.useContext()
-
-    const getData = useCallback(async (pageNumber: number) => {
-        try {
-            const pageData = await trpcContext.crypto.getPageData.fetch({ pageNumber: pageNumber, itemsPerPage: ITEMS_PER_PAGE })
-            return pageData
-        } catch (err) {
-            console.error(err)
-            return [] as CoinInfo[]
-        }
-    }, [trpcContext])
+    const {getPageData} = useTRPC()
 
     const loadData = async (currPage: number) => {
         setIsLoading(true)
 
-        const pageData = await getData(currPage)
+        const pageData = await getPageData(currPage)
 
         if (!pageData.length) {
-            const prevPageData = await getData(currPage - 1)
+            const prevPageData = await getPageData(currPage - 1)
 
             setHasPrevPage(prevPageData.length > 0)
         }

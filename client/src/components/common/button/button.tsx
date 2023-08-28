@@ -8,11 +8,19 @@ type ButtonProps = PropsWithChildren & {
     variant?: 'green' | 'red'
 }
 
-export const Button = ({ onClick, children, variant = 'green', type }: ButtonProps) => {
+export const Button = ({
+    onClick,
+    children,
+    variant = 'green',
+    type,
+}: ButtonProps) => {
     return (
-        <button type={type} className={`${styles.btn} ${styles[variant]}`} onClick={onClick}>
+        <button
+            type={type}
+            className={`${styles.btn} ${styles[variant]}`}
+            onClick={onClick}
+        >
             {children}
         </button>
     )
 }
-

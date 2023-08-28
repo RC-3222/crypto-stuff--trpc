@@ -10,7 +10,7 @@ import styles from './info-page.module.scss'
 import { Loader } from '../../components/common/loader'
 import { coinNameStr } from '../../utils'
 
-import { useTRPC } from '../../hooks'
+import { useDataGetters } from './hooks'
 
 export const InfoPage = () => {
     const params = useParams()
@@ -22,7 +22,7 @@ export const InfoPage = () => {
 
     const [isLoading, setIsLoading] = useState(true)
 
-    const {getFullCoinData} = useTRPC()
+    const { getFullCoinData } = useDataGetters()
 
     const loadInfo = async () => {
         setIsLoading(true)

@@ -1,41 +1,37 @@
-import { valueStr, coinNameStr } from ".";
+import { valueStr, coinNameStr } from '.'
 
 describe('testing valueStr utility function', () => {
-
-    test("with more than 2 decimal digits", () => {
+    test('with more than 2 decimal digits', () => {
         const val = 2344.5667
-        expect(valueStr(val)).toEqual("2344.57");
-    });
+        expect(valueStr(val)).toEqual('2344.57')
+    })
 
-    test("with less than 2 decimal digits", () => {
+    test('with less than 2 decimal digits', () => {
         const val = 2344.5
-        expect(valueStr(val)).toEqual("2344.50");
-    });
+        expect(valueStr(val)).toEqual('2344.50')
+    })
 
-    test("without any decimal digits", () => {
+    test('without any decimal digits', () => {
         const val = 2344
-        expect(valueStr(val)).toEqual("2344.00");
-    });
+        expect(valueStr(val)).toEqual('2344.00')
+    })
 })
 
-
-
 describe('testing coinNameStr utility function', () => {
-
-    test("without currency symbol", () => {
+    test('without currency symbol', () => {
         const val = {
-            name: "Bitcoin",
+            name: 'Bitcoin',
         }
 
-        expect(coinNameStr(val.name)).toEqual("Bitcoin");
-    });
+        expect(coinNameStr(val.name)).toEqual('Bitcoin')
+    })
 
-    test("with currency symbol", () => {
+    test('with currency symbol', () => {
         const val = {
-            name: "Bitcoin",
-            symbol: "BTC"
+            name: 'Bitcoin',
+            symbol: 'BTC',
         }
 
-        expect(coinNameStr(val.name, val.symbol)).toEqual("Bitcoin (BTC)");
-    });
+        expect(coinNameStr(val.name, val.symbol)).toEqual('Bitcoin (BTC)')
+    })
 })

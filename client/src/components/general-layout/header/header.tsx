@@ -9,7 +9,7 @@ import { PortfolioContext } from '../../../context'
 
 import styles from './header.module.scss'
 import { coinNameStr, valueStr } from '../../../utils'
-import { useTRPC } from '../../../hooks'
+import { useDataGetters } from './hooks'
 
 export const Header = () => {
     const [isMenuVisible, setIsMenuVisible] = useState(false)
@@ -51,7 +51,7 @@ export const Header = () => {
         return ` ${priceDiff > 0 ? '+' : '-'} ${Math.abs(priceDiff).toFixed(2)} (${priceDiffPercent.toFixed(2)} %)`
     }, [currPrice, prevPrice])
 
-    const {getTopCoinData} = useTRPC()
+    const { getTopCoinData } = useDataGetters()
 
     const loadData = async () => {
         setIsLoadingTopData(true)
@@ -64,7 +64,9 @@ export const Header = () => {
         setIsLoadingTopData(false)
     }
 
-    useEffect(() => { loadData() }, [])
+    useEffect(() => {
+        loadData()
+    }, [])
 
     return (
         <header className={styles.header}>
@@ -75,14 +77,18 @@ export const Header = () => {
                     <ul className={styles.topCoinContainer}>
                         {topCoinData.map((item) => (
                             <li className={styles.topCoin} key={item.id}>
-                                <span>{coinNameStr(item.name, item.symbol)}</span>
+                                <span>
+                                    {coinNameStr(item.name, item.symbol)}
+                                </span>
                                 {' - '}
                                 <span>{valueStr(+item.priceUsd)} USD</span>
                             </li>
                         ))}
                     </ul>
                 )}
-                {!isLoadingTopData && !topCoinData.length && <span>No data</span>}
+                {!isLoadingTopData && !topCoinData.length && (
+                    <span>No data</span>
+                )}
             </div>
             <div className={styles.portfolioBlock}>
                 <div className={styles.portfolioBlock__labels}>

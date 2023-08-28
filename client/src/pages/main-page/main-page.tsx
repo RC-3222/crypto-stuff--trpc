@@ -7,7 +7,7 @@ import styles from './main-page.module.scss'
 import { CoinList } from '../../components/coin-list'
 import { Loader } from '../../components/common/loader'
 
-import { useTRPC } from '../../hooks'
+import { useDataGetters } from './hooks'
 
 export const MainPage = () => {
     const [currentCoins, setCurrentCoins] = useState<CoinInfo[]>([])
@@ -22,7 +22,7 @@ export const MainPage = () => {
 
     const [currPage, setCurrPage] = useState(0)
 
-    const {getPageData} = useTRPC()
+    const { getPageData } = useDataGetters()
 
     const loadData = async (currPage: number) => {
         setIsLoading(true)

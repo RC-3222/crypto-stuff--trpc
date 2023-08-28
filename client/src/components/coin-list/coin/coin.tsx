@@ -14,9 +14,15 @@ type CoinProps = {
 export const Coin = ({ item }: CoinProps) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false)
 
-    const nameStr = useMemo(() => coinNameStr(item.name, item.symbol), [item.name, item.symbol])
+    const nameStr = useMemo(
+        () => coinNameStr(item.name, item.symbol),
+        [item.name, item.symbol]
+    )
     const valStr = useMemo(() => valueStr(+item.priceUsd), [item.priceUsd])
-    const supplyStr = useMemo(() => item.supply.replace(/\.?0+$/g, ''), [item.supply])
+    const supplyStr = useMemo(
+        () => item.supply.replace(/\.?0+$/g, ''),
+        [item.supply]
+    )
 
     return (
         <li className={styles.coinItem}>

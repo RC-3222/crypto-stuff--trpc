@@ -18,8 +18,10 @@ const formatXAxis = (tickItem: number) => {
 }
 
 export const HistoryChart = ({ data, testing = false }: HistoryChartProps) => {
-    return (testing
-        ? <AreaChart width={660} height={460}
+    return testing ? (
+        <AreaChart
+            width={660}
+            height={460}
             data={data}
             margin={{
                 top: 5,
@@ -28,7 +30,7 @@ export const HistoryChart = ({ data, testing = false }: HistoryChartProps) => {
                 bottom: 5,
             }}
             data-testid="history-chart"
-            role='chart'
+            role="chart"
         >
             <XAxis dataKey="time" tickFormatter={formatXAxis} />
             <YAxis />
@@ -40,7 +42,8 @@ export const HistoryChart = ({ data, testing = false }: HistoryChartProps) => {
                 fill="#8884d8"
             />
         </AreaChart>
-        : <ResponsiveContainer width="95%" height={460}>
+    ) : (
+        <ResponsiveContainer width="95%" height={460}>
             <AreaChart
                 data={data}
                 margin={{

@@ -31,7 +31,9 @@ export const PortfolioItem = ({ item }: PortfolioItemProps) => {
                         {`Currently in portfolio: ${item.amount}`}
                     </span>
                     <span className={styles.portfolioItem__info__priceTotal}>
-                        {`Total price (USD): ${valueStr(item.priceUsd * item.amount)}`}
+                        {`Total price (USD): ${valueStr(
+                            item.priceUsd * item.amount
+                        )}`}
                     </span>
                 </div>
             </div>

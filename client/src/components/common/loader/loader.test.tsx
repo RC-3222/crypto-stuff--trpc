@@ -1,9 +1,9 @@
-import { render, screen } from '@testing-library/react';
-import { Loader } from './loader';
+import { render, screen } from '@testing-library/react'
+import { Loader } from './loader'
 
 test('renders correctly', () => {
-    render(<Loader />);
+    render(<Loader />)
     const elem = screen.getByTestId('loader')
 
-    expect(elem).toBeInTheDocument();
-});
+    expect(elem).toBeInTheDocument()
+})

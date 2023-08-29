@@ -18,7 +18,11 @@ export const PortfolioItem = ({ item }: PortfolioItemProps) => {
     }
 
     return (
-        <li key={item.id} className={styles.portfolioItem}>
+        <li
+            data-testid="portfolio-item"
+            key={item.id}
+            className={styles.portfolioItem}
+        >
             <div className={styles.portfolioItem__info}>
                 <span className={styles.portfolioItem__info__name}>
                     {`${item.name}`}
@@ -27,7 +31,10 @@ export const PortfolioItem = ({ item }: PortfolioItemProps) => {
                     <span className={styles.portfolioItem__info__pricePerUnit}>
                         {`Price per unit (USD): ${valueStr(item.priceUsd)}`}
                     </span>
-                    <span className={styles.portfolioItem__info__amount}>
+                    <span
+                        data-testid="coin-amount"
+                        className={styles.portfolioItem__info__amount}
+                    >
                         {`Currently in portfolio: ${item.amount}`}
                     </span>
                     <span className={styles.portfolioItem__info__priceTotal}>
@@ -37,7 +44,12 @@ export const PortfolioItem = ({ item }: PortfolioItemProps) => {
                     </span>
                 </div>
             </div>
-            <Button onClick={() => removeItemHandler(item.id)}>Remove</Button>
+            <Button
+                dataTestid="remove-btn"
+                onClick={() => removeItemHandler(item.id)}
+            >
+                Remove
+            </Button>
         </li>
     )
 }

@@ -18,7 +18,12 @@ export const Modal = ({ children, onHide }: ModalProps) => {
         <div className={styles.wrapper}>
             <div className={styles.backdrop}></div>
             <div className={styles.container}>
-                <button className={styles.closeIcon} onClick={onHide}>
+                <button
+                    type="button"
+                    data-testid="close-modal-btn"
+                    className={styles.closeIcon}
+                    onClick={onHide}
+                >
                     <img src="close-icon.svg" alt="close-icon" />
                 </button>
                 {children}

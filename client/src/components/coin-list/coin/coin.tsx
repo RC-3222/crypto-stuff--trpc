@@ -25,7 +25,7 @@ export const Coin = ({ item }: CoinProps) => {
     )
 
     return (
-        <li className={styles.coinItem}>
+        <li data-testid="coin-item" className={styles.coinItem}>
             <Link to={`/coins/${item.id}`}>
                 <span>{nameStr}</span>
                 {' - '}
@@ -33,7 +33,9 @@ export const Coin = ({ item }: CoinProps) => {
                 {' - '}
                 <span>{`${supplyStr} available for trading`}</span>
             </Link>
-            <Button onClick={() => setIsMenuVisible(true)}>+</Button>
+            <Button dataTestid="add-btn" onClick={() => setIsMenuVisible(true)}>
+                +
+            </Button>
             {isMenuVisible && (
                 <AddCoinMenu
                     coinToAdd={item}

@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "concurrently \"npm run --prefix ./server start\" \"npm run --prefix ./client start\""
+    "dev": "concurrently \"npm run --prefix ./server start\" \"npm run --prefix ./client start\"",
+    "dev:cypress": "concurrently \"npm run dev\" \"npm run --prefix ./client cypress\"",
+    "storybook": "npm run --prefix ./client storybook"
   },
   "author": "random",
   "license": "ISC",

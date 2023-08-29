@@ -32,7 +32,10 @@ export const useDataGetters = () => {
 
     const getCurrPortfolioState = async (prevState: PortfolioItem[]) => {
         try {
-            const { data } = await trpcContext.crypto.getUpdatedPortfolioData.fetch(prevState)
+            const { data } =
+                await trpcContext.crypto.getUpdatedPortfolioData.fetch(
+                    prevState
+                )
             return data as PortfolioItem[]
         } catch (err) {
             console.error(err)

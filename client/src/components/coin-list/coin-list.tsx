@@ -9,7 +9,7 @@ type CoinListProps = {
 
 export const CoinList = ({ items }: CoinListProps) => {
     return (
-        <ul className={styles.coinList}>
+        <ul data-testid="coin-list" className={styles.coinList}>
             {items.map((item) => (
                 <Coin key={item.id} item={item} />
             ))}

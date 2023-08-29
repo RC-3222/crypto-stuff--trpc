@@ -11,10 +11,7 @@ export const useDataGetters = () => {
                     trpcContext.crypto.getCoinInfo.fetch(coinId),
                     trpcContext.crypto.getCoinHistory.fetch(coinId),
                 ])
-            return [CoinInfo, coinHistory] as [
-                CoinInfo | null,
-                HistoryItem[],
-            ]
+            return [CoinInfo, coinHistory] as [CoinInfo | null, HistoryItem[]]
         } catch (err) {
             console.error(err)
             return [null, new Array<HistoryItem>()] as [

@@ -1,0 +1,22 @@
+[
+    {
+        "result": {
+            "data": {
+                "data": [
+                    {
+                        "id": "bitcoin",
+                        "name": "Bitcoin (BTC)",
+                        "priceUsd": 15,
+                        "amount": 10
+                    },
+                    {
+                        "id": "dogecoin",
+                        "name": "Dogecoin (DOGE)",
+                        "priceUsd": 15,
+                        "amount": 10
+                    }
+                ]
+            }
+        }
+    }
+]

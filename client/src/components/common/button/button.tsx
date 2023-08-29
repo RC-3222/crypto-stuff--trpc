@@ -6,6 +6,7 @@ type ButtonProps = PropsWithChildren & {
     onClick?: MouseEventHandler
     type?: 'button' | 'submit' | 'reset'
     variant?: 'green' | 'red'
+    dataTestid?: string
 }
 
 export const Button = ({
@@ -13,9 +14,11 @@ export const Button = ({
     children,
     variant = 'green',
     type,
+    dataTestid,
 }: ButtonProps) => {
     return (
         <button
+            data-testid={dataTestid}
             type={type}
             className={`${styles.btn} ${styles[variant]}`}
             onClick={onClick}

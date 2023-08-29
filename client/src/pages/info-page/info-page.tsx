@@ -42,7 +42,7 @@ export const InfoPage = () => {
             {isLoading && <Loader />}
             {!isLoading && mainInfo && (
                 <>
-                    <h2 className={styles.title}>
+                    <h2 data-testid="coin-title" className={styles.title}>
                         {coinNameStr(mainInfo.name, mainInfo.symbol)}
                     </h2>
                     <h3
@@ -56,7 +56,10 @@ export const InfoPage = () => {
                     <h4
                         className={styles.supply}
                     >{`Available for trading: ${mainInfo.supply}`}</h4>
-                    <Button onClick={() => setIsMenuVisible(true)}>
+                    <Button
+                        dataTestid="add-btn"
+                        onClick={() => setIsMenuVisible(true)}
+                    >
                         Add To Portfolio
                     </Button>
                     <h3

@@ -20,6 +20,11 @@ const meta = {
                 disable: true,
             },
         },
+        dataTestid: {
+            table: {
+                disable: true,
+            },
+        },
     },
 } satisfies Meta<typeof Button>
 

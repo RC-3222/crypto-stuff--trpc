@@ -46,9 +46,11 @@ export const Header = () => {
         const priceDiff = currPrice - prevPrice
         if (!priceDiff) return ''
 
-        const priceDiffPercent = Math.abs(priceDiff / prevPrice)
+        const priceDiffPercent = Math.abs(priceDiff / prevPrice) * 100
 
-        return ` ${priceDiff > 0 ? '+' : '-'} ${Math.abs(priceDiff).toFixed(2)} (${priceDiffPercent.toFixed(2)} %)`
+        return ` ${priceDiff > 0 ? '+' : '-'} ${Math.abs(priceDiff).toFixed(
+            2
+        )} (${priceDiffPercent.toFixed(2)} %)`
     }, [currPrice, prevPrice])
 
     const { getTopCoinData } = useDataGetters()
@@ -76,7 +78,11 @@ export const Header = () => {
                 {!isLoadingTopData && !!topCoinData.length && (
                     <ul className={styles.topCoinContainer}>
                         {topCoinData.map((item) => (
-                            <li className={styles.topCoin} key={item.id}>
+                            <li
+                                data-testid="top-coin"
+                                className={styles.topCoin}
+                                key={item.id}
+                            >
                                 <span>
                                     {coinNameStr(item.name, item.symbol)}
                                 </span>
@@ -97,18 +103,31 @@ export const Header = () => {
                         <span>Updating...</span>
                     ) : (
                         <span>
-                            <span>{currPrice.toFixed(2)} USD</span>
+                            <span data-testid="curr-price">
+                                {currPrice.toFixed(2)} USD
+                            </span>
                             {priceStr && (
-                                <span className={priceStyle}>{priceStr}</span>
+                                <span
+                                    data-testid="curr-diff"
+                                    className={priceStyle}
+                                >
+                                    {priceStr}
+                                </span>
                             )}
                         </span>
                     )}
                 </div>
                 <div className={styles.portfolioBlock__controls}>
-                    <Button onClick={() => setIsMenuVisible(true)}>
+                    <Button
+                        dataTestid="more-info-btn"
+                        onClick={() => setIsMenuVisible(true)}
+                    >
                         More Info
                     </Button>
-                    <Button onClick={() => context.refreshPriceDiff()}>
+                    <Button
+                        dataTestid="refresh-diff-btn"
+                        onClick={() => context.refreshPriceDiff()}
+                    >
                         Refresh
                     </Button>
                 </div>

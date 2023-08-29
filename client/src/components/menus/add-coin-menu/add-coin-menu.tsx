@@ -37,16 +37,19 @@ export const AddCoinMenu = ({ onHide, coinToAdd }: AddCoinMenuProps) => {
                 <div className={styles.inputContainer}>
                     <label htmlFor={coinToAdd.id}>Value to add:</label>
                     <input
+                        type="text"
                         className={styles.input}
                         id={coinToAdd.id}
                         ref={inputRef}
                         placeholder="value..."
-                    ></input>
+                    />
                     {!!errorMessage && (
                         <span className={styles.error}>{errorMessage}</span>
                     )}
                 </div>
-                <Button type="submit">Add</Button>
+                <Button dataTestid="submit-btn" type="submit">
+                    Add
+                </Button>
             </form>
         </Modal>
     )

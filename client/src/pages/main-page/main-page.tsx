@@ -59,6 +59,7 @@ export const MainPage = () => {
                     <div className={styles.paginationContainer}>
                         {currPage > 0 && (
                             <Button
+                                dataTestid="nav-btn--previous"
                                 onClick={() =>
                                     navigate(`?page=${currPage - 1}`)
                                 }
@@ -68,6 +69,7 @@ export const MainPage = () => {
                         )}
                         <span>{`${currPage + 1}`}</span>
                         <Button
+                            dataTestid="nav-btn--next"
                             onClick={() => navigate(`?page=${currPage + 1}`)}
                         >
                             Next

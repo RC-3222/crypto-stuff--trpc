@@ -2,6 +2,57 @@
     {
         "result": {
             "data": {
+                "data": [
+                    {
+                        "id": "bitcoin",
+                        "rank": "1",
+                        "symbol": "BTC",
+                        "name": "Bitcoin",
+                        "supply": "19460625.0000000000000000",
+                        "maxSupply": "21000000.0000000000000000",
+                        "marketCapUsd": "538723134262.4394325160325000",
+                        "volumeUsd24Hr": "8528012773.8610676676049824",
+                        "priceUsd": "27682.7252085911645960",
+                        "changePercent24Hr": "6.4151904760446721",
+                        "vwap24Hr": "27247.7219948687927606",
+                        "explorer": "https://blockchain.info/"
+                    },
+                    {
+                        "id": "ethereum",
+                        "rank": "2",
+                        "symbol": "ETH",
+                        "name": "Ethereum",
+                        "supply": "120131756.1693597400000000",
+                        "maxSupply": null,
+                        "marketCapUsd": "208096931597.5490287758913181",
+                        "volumeUsd24Hr": "3852704030.7014654817870995",
+                        "priceUsd": "1732.2391533524029745",
+                        "changePercent24Hr": "5.0840304673800955",
+                        "vwap24Hr": "1708.1591212331630319",
+                        "explorer": "https://etherscan.io/"
+                    },
+                    {
+                        "id": "tether",
+                        "rank": "3",
+                        "symbol": "USDT",
+                        "name": "Tether",
+                        "supply": "82842337234.0993000000000000",
+                        "maxSupply": null,
+                        "marketCapUsd": "82851024771.9949500815284847",
+                        "volumeUsd24Hr": "14427428684.5570083196177511",
+                        "priceUsd": "1.0001048683340633",
+                        "changePercent24Hr": "-0.0164036881713999",
+                        "vwap24Hr": "0.9994227900450141",
+                        "explorer": "https://www.omniexplorer.info/asset/31"
+                    }
+                ],
+                "timestamp": 1693344440464
+            }
+        }
+    },
+    {
+        "result": {
+            "data": {
                 "data": {
                     "id": "bitcoin",
                     "rank": "1",
@@ -9,14 +60,14 @@
                     "name": "Bitcoin",
                     "supply": "19460625.0000000000000000",
                     "maxSupply": "21000000.0000000000000000",
-                    "marketCapUsd": "505318050176.2055515475533125",
-                    "volumeUsd24Hr": "2324130129.7138109443583040",
-                    "priceUsd": "25966.1778681931105269",
-                    "changePercent24Hr": "-0.3764006183614954",
-                    "vwap24Hr": "26056.5246677872930689",
+                    "marketCapUsd": "538723134262.4394325160325000",
+                    "volumeUsd24Hr": "8528012773.8610676676049824",
+                    "priceUsd": "27682.7252085911645960",
+                    "changePercent24Hr": "6.4151904760446721",
+                    "vwap24Hr": "27247.7219948687927606",
                     "explorer": "https://blockchain.info/"
                 },
-                "timestamp": 1693311605195
+                "timestamp": 1693344440542
             }
         }
     },
@@ -1840,7 +1891,45 @@
                         "date": "2023-08-28T00:00:00.000Z"
                     }
                 ],
-                "timestamp": 1693311605139
+                "timestamp": 1693344440470
+            }
+        }
+    },
+    {
+        "result": {
+            "data": {
+                "data": [
+                    {
+                        "id": "tether",
+                        "name": "Tether (USDT)",
+                        "priceUsd": 1.0001048683340632,
+                        "amount": 5
+                    },
+                    {
+                        "id": "bitcoin",
+                        "name": "Bitcoin (BTC)",
+                        "priceUsd": 27682.725208591164,
+                        "amount": 18.5
+                    },
+                    {
+                        "id": "dogecoin",
+                        "name": "Dogecoin (DOGE)",
+                        "priceUsd": 0.0667593790543231,
+                        "amount": 35555
+                    },
+                    {
+                        "id": "unus-sed-leo",
+                        "name": "UNUS SED LEO (LEO)",
+                        "priceUsd": 3.9318494620707694,
+                        "amount": 234
+                    },
+                    {
+                        "id": "xrp",
+                        "name": "XRP (XRP)",
+                        "priceUsd": 0.541593155001904,
+                        "amount": 15
+                    }
+                ]
             }
         }
     }

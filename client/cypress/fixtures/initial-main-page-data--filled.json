@@ -1,0 +1,307 @@
+[
+    {
+        "result": {
+            "data": {
+                "data": [
+                    {
+                        "id": "bitcoin",
+                        "rank": "1",
+                        "symbol": "BTC",
+                        "name": "Bitcoin",
+                        "supply": "19460625.0000000000000000",
+                        "maxSupply": "21000000.0000000000000000",
+                        "marketCapUsd": "538433155878.8324023396719375",
+                        "volumeUsd24Hr": "8510581141.1040677113679343",
+                        "priceUsd": "27667.8244341501057823",
+                        "changePercent24Hr": "6.3447379422487961",
+                        "vwap24Hr": "27247.7219948687927606",
+                        "explorer": "https://blockchain.info/"
+                    },
+                    {
+                        "id": "ethereum",
+                        "rank": "2",
+                        "symbol": "ETH",
+                        "name": "Ethereum",
+                        "supply": "120131756.1693597400000000",
+                        "maxSupply": null,
+                        "marketCapUsd": "207970124339.8777940978728521",
+                        "volumeUsd24Hr": "3845773002.2015712262490002",
+                        "priceUsd": "1731.1835851852943215",
+                        "changePercent24Hr": "5.0665657838314535",
+                        "vwap24Hr": "1708.1591212331630319",
+                        "explorer": "https://etherscan.io/"
+                    },
+                    {
+                        "id": "tether",
+                        "rank": "3",
+                        "symbol": "USDT",
+                        "name": "Tether",
+                        "supply": "82842337234.0993000000000000",
+                        "maxSupply": null,
+                        "marketCapUsd": "82852285261.1300565520494431",
+                        "volumeUsd24Hr": "14394019096.9544004478770494",
+                        "priceUsd": "1.0001200838528088",
+                        "changePercent24Hr": "0.0000044191881143",
+                        "vwap24Hr": "0.9994227900450141",
+                        "explorer": "https://www.omniexplorer.info/asset/31"
+                    }
+                ],
+                "timestamp": 1693344126464
+            }
+        }
+    },
+    {
+        "result": {
+            "data": [
+                {
+                    "id": "bitcoin",
+                    "rank": "1",
+                    "symbol": "BTC",
+                    "name": "Bitcoin",
+                    "supply": "19460625.0000000000000000",
+                    "maxSupply": "21000000.0000000000000000",
+                    "marketCapUsd": "538433155878.8324023396719375",
+                    "volumeUsd24Hr": "8510581141.1040677113679343",
+                    "priceUsd": "27667.8244341501057823",
+                    "changePercent24Hr": "6.3447379422487961",
+                    "vwap24Hr": "27247.7219948687927606",
+                    "explorer": "https://blockchain.info/"
+                },
+                {
+                    "id": "ethereum",
+                    "rank": "2",
+                    "symbol": "ETH",
+                    "name": "Ethereum",
+                    "supply": "120131756.1693597400000000",
+                    "maxSupply": null,
+                    "marketCapUsd": "207970124339.8777940978728521",
+                    "volumeUsd24Hr": "3845773002.2015712262490002",
+                    "priceUsd": "1731.1835851852943215",
+                    "changePercent24Hr": "5.0665657838314535",
+                    "vwap24Hr": "1708.1591212331630319",
+                    "explorer": "https://etherscan.io/"
+                },
+                {
+                    "id": "tether",
+                    "rank": "3",
+                    "symbol": "USDT",
+                    "name": "Tether",
+                    "supply": "82842337234.0993000000000000",
+                    "maxSupply": null,
+                    "marketCapUsd": "82852285261.1300565520494431",
+                    "volumeUsd24Hr": "14394019096.9544004478770494",
+                    "priceUsd": "1.0001200838528088",
+                    "changePercent24Hr": "0.0000044191881143",
+                    "vwap24Hr": "0.9994227900450141",
+                    "explorer": "https://www.omniexplorer.info/asset/31"
+                },
+                {
+                    "id": "binance-coin",
+                    "rank": "4",
+                    "symbol": "BNB",
+                    "name": "BNB",
+                    "supply": "166801148.0000000000000000",
+                    "maxSupply": "166801148.0000000000000000",
+                    "marketCapUsd": "37758788938.1669570254045564",
+                    "volumeUsd24Hr": "223803980.7587632096406445",
+                    "priceUsd": "226.3700783292388193",
+                    "changePercent24Hr": "3.9279707421175177",
+                    "vwap24Hr": "225.4216422672390319",
+                    "explorer": "https://etherscan.io/token/0xB8c77482e45F1F44dE1745F52C74426C631bDD52"
+                },
+                {
+                    "id": "usd-coin",
+                    "rank": "5",
+                    "symbol": "USDC",
+                    "name": "USD Coin",
+                    "supply": "26258163462.1215630000000000",
+                    "maxSupply": null,
+                    "marketCapUsd": "26259352191.3324519317383280",
+                    "volumeUsd24Hr": "693077464.6859751482911496",
+                    "priceUsd": "1.0000452708435837",
+                    "changePercent24Hr": "-0.0490703343420061",
+                    "vwap24Hr": "1.0001870664400162",
+                    "explorer": "https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+                },
+                {
+                    "id": "xrp",
+                    "rank": "6",
+                    "symbol": "XRP",
+                    "name": "XRP",
+                    "supply": "45404028640.0000000000000000",
+                    "maxSupply": "100000000000.0000000000000000",
+                    "marketCapUsd": "24548214599.0703882047215200",
+                    "volumeUsd24Hr": "614187443.3002367131092498",
+                    "priceUsd": "0.5406615962144805",
+                    "changePercent24Hr": "3.6645215228265462",
+                    "vwap24Hr": "0.5291261535546849",
+                    "explorer": "https://xrpcharts.ripple.com/#/graph/"
+                },
+                {
+                    "id": "cardano",
+                    "rank": "7",
+                    "symbol": "ADA",
+                    "name": "Cardano",
+                    "supply": "35048010482.3520000000000000",
+                    "maxSupply": "45000000000.0000000000000000",
+                    "marketCapUsd": "9622204120.3590154378897289",
+                    "volumeUsd24Hr": "118646403.3797629725107807",
+                    "priceUsd": "0.2745435186743099",
+                    "changePercent24Hr": "3.0299593331855389",
+                    "vwap24Hr": "0.2709230529617808",
+                    "explorer": "https://cardanoexplorer.com/"
+                },
+                {
+                    "id": "dogecoin",
+                    "rank": "8",
+                    "symbol": "DOGE",
+                    "name": "Dogecoin",
+                    "supply": "140634406383.7052000000000000",
+                    "maxSupply": null,
+                    "marketCapUsd": "9378688466.1832411943199671",
+                    "volumeUsd24Hr": "191751413.8668079334979310",
+                    "priceUsd": "0.0666884349808008",
+                    "changePercent24Hr": "5.3094554566056208",
+                    "vwap24Hr": "0.0656747185959038",
+                    "explorer": "http://dogechain.info/chain/Dogecoin"
+                },
+                {
+                    "id": "solana",
+                    "rank": "9",
+                    "symbol": "SOL",
+                    "name": "Solana",
+                    "supply": "407234211.5003290000000000",
+                    "maxSupply": null,
+                    "marketCapUsd": "8888384600.4293989631357192",
+                    "volumeUsd24Hr": "151869316.6044572408800888",
+                    "priceUsd": "21.8262227225037996",
+                    "changePercent24Hr": "6.7634538561570123",
+                    "vwap24Hr": "21.2312162052464634",
+                    "explorer": "https://explorer.solana.com/"
+                },
+                {
+                    "id": "tron",
+                    "rank": "10",
+                    "symbol": "TRX",
+                    "name": "TRON",
+                    "supply": "89442500282.2074100000000000",
+                    "maxSupply": null,
+                    "marketCapUsd": "6902038144.3095701501892354",
+                    "volumeUsd24Hr": "62154682.1489479989288553",
+                    "priceUsd": "0.0771673211564120",
+                    "changePercent24Hr": "0.9933548664661304",
+                    "vwap24Hr": "0.0768437834338818",
+                    "explorer": "https://tronscan.org/#/"
+                },
+                {
+                    "id": "polkadot",
+                    "rank": "11",
+                    "symbol": "DOT",
+                    "name": "Polkadot",
+                    "supply": "1269396021.8191000000000000",
+                    "maxSupply": null,
+                    "marketCapUsd": "5917452859.2771052866821805",
+                    "volumeUsd24Hr": "64945279.9346394363937669",
+                    "priceUsd": "4.6616286466670477",
+                    "changePercent24Hr": "1.8490230932361679",
+                    "vwap24Hr": "4.6431065132365861",
+                    "explorer": "https://polkascan.io/polkadot"
+                },
+                {
+                    "id": "polygon",
+                    "rank": "12",
+                    "symbol": "MATIC",
+                    "name": "Polygon",
+                    "supply": "9319469069.2849300000000000",
+                    "maxSupply": "10000000000.0000000000000000",
+                    "marketCapUsd": "5527095779.1061926911179790",
+                    "volumeUsd24Hr": "167121697.7637776647757177",
+                    "priceUsd": "0.5930698130993721",
+                    "changePercent24Hr": "5.8752955695369199",
+                    "vwap24Hr": "0.5812765656388548",
+                    "explorer": "https://etherscan.io/token/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0"
+                },
+                {
+                    "id": "multi-collateral-dai",
+                    "rank": "13",
+                    "symbol": "DAI",
+                    "name": "Multi Collateral DAI",
+                    "supply": "5347888595.7464075000000000",
+                    "maxSupply": null,
+                    "marketCapUsd": "5351718157.1858520695570794",
+                    "volumeUsd24Hr": "8966708.6853317185335206",
+                    "priceUsd": "1.0007160884844330",
+                    "changePercent24Hr": "0.0251691488735015",
+                    "vwap24Hr": "0.9999340437840594",
+                    "explorer": "https://etherscan.io/token/0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359"
+                },
+                {
+                    "id": "litecoin",
+                    "rank": "14",
+                    "symbol": "LTC",
+                    "name": "Litecoin",
+                    "supply": "73552914.2274352800000000",
+                    "maxSupply": "84000000.0000000000000000",
+                    "marketCapUsd": "5061364578.2897989705014648",
+                    "volumeUsd24Hr": "206970506.2034400929278238",
+                    "priceUsd": "68.8125634647105121",
+                    "changePercent24Hr": "5.3936462238228017",
+                    "vwap24Hr": "67.7474918645903256",
+                    "explorer": "http://explorer.litecoin.net/chain/Litecoin"
+                },
+                {
+                    "id": "shiba-inu",
+                    "rank": "15",
+                    "symbol": "SHIB",
+                    "name": "Shiba Inu",
+                    "supply": "589346914631298.1000000000000000",
+                    "maxSupply": null,
+                    "marketCapUsd": "4925766886.8607734255336335",
+                    "volumeUsd24Hr": "70773780.4874875560022707",
+                    "priceUsd": "0.0000083580091192",
+                    "changePercent24Hr": "2.0013338109718675",
+                    "vwap24Hr": "0.0000082812017582",
+                    "explorer": "https://etherscan.io/token/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce"
+                }
+            ]
+        }
+    },
+    {
+        "result": {
+            "data": {
+                "data": [
+                    {
+                        "id": "tether",
+                        "name": "Tether (USDT)",
+                        "priceUsd": 1.0001200838528088,
+                        "amount": 5
+                    },
+                    {
+                        "id": "bitcoin",
+                        "name": "Bitcoin (BTC)",
+                        "priceUsd": 27670.082509343487,
+                        "amount": 18.5
+                    },
+                    {
+                        "id": "dogecoin",
+                        "name": "Dogecoin (DOGE)",
+                        "priceUsd": 0.0666929627022638,
+                        "amount": 35555
+                    },
+                    {
+                        "id": "unus-sed-leo",
+                        "name": "UNUS SED LEO (LEO)",
+                        "priceUsd": 3.930534531203852,
+                        "amount": 234
+                    },
+                    {
+                        "id": "xrp",
+                        "name": "XRP (XRP)",
+                        "priceUsd": 0.5406615962144805,
+                        "amount": 15
+                    }
+                ]
+            }
+        }
+    }
+]

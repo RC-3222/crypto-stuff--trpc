@@ -1,0 +1,59 @@
+[
+    {
+        "result": {
+            "data": {
+                "data": [
+                    {
+                        "id": "bitcoin",
+                        "rank": "1",
+                        "symbol": "BTC",
+                        "name": "Bitcoin",
+                        "supply": "19460625.0000000000000000",
+                        "maxSupply": "21000000.0000000000000000",
+                        "marketCapUsd": "537158063522.2111846922675625",
+                        "volumeUsd24Hr": "8598774080.6031826722948844",
+                        "priceUsd": "27602.3027791867519513",
+                        "changePercent24Hr": "5.5684316831879413",
+                        "vwap24Hr": "27290.1848314616879779",
+                        "explorer": "https://blockchain.info/"
+                    },
+                    {
+                        "id": "ethereum",
+                        "rank": "2",
+                        "symbol": "ETH",
+                        "name": "Ethereum",
+                        "supply": "120131756.1693597400000000",
+                        "maxSupply": null,
+                        "marketCapUsd": "207267496264.5639234579931330",
+                        "volumeUsd24Hr": "3954160051.0171863950904528",
+                        "priceUsd": "1725.3347730333824046",
+                        "changePercent24Hr": "4.1455326130410186",
+                        "vwap24Hr": "1709.8297446954172293",
+                        "explorer": "https://etherscan.io/"
+                    },
+                    {
+                        "id": "tether",
+                        "rank": "3",
+                        "symbol": "USDT",
+                        "name": "Tether",
+                        "supply": "82842337234.0993000000000000",
+                        "maxSupply": null,
+                        "marketCapUsd": "82856150037.1124817306404150",
+                        "volumeUsd24Hr": "14621225995.0496935671808468",
+                        "priceUsd": "1.0001667360370839",
+                        "changePercent24Hr": "0.0038102959505538",
+                        "vwap24Hr": "0.9994702965264749",
+                        "explorer": "https://www.omniexplorer.info/asset/31"
+                    }
+                ],
+                "timestamp": 1693351698144
+            }
+        }
+    },
+    {
+        "result": {
+            "data": []
+        }
+    },
+    [{ "result": { "data": { "data": [] } } }]
+]

@@ -44,7 +44,7 @@ export const AddCoinMenu = ({ onHide, coinToAdd }: AddCoinMenuProps) => {
                         placeholder="value..."
                     />
                     {!!errorMessage && (
-                        <span className={styles.error}>{errorMessage}</span>
+                        <span data-testid="add-coin-err" className={styles.error}>{errorMessage}</span>
                     )}
                 </div>
                 <Button dataTestid="submit-btn" type="submit">

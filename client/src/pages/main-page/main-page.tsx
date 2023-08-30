@@ -78,15 +78,14 @@ export const MainPage = () => {
                 </>
             )}
             {!isLoading && !currentCoins.length && (
-                <div className={styles.noCoins}>
+                <div data-testid="no-coins-message" className={styles.noCoins}>
                     <h3>No coins here...</h3>
                     {hasPrevPage ? (
                         <>
                             <p>But there are some on the previous page.</p>
                             <Button
-                                onClick={() =>
-                                    navigate(`?page=${currPage - 1}`)
-                                }
+                                dataTestid='no-coins-btn--prev-page'
+                                onClick={() => navigate(`?page=${currPage - 1}`)}
                             >
                                 To previous page
                             </Button>
@@ -98,7 +97,10 @@ export const MainPage = () => {
                                 external way, so the only thing we can suggest
                                 you is to go back to initial page.
                             </p>
-                            <Button onClick={() => navigate(`?page=${0}`)}>
+                            <Button 
+                                dataTestid='no-coins-btn--initial-page'
+                                onClick={() => navigate(`?page=${0}`)}
+                            >
                                 To initial page
                             </Button>
                         </>

@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:4000/trpc/'
+import { BASE_SERVER_URL } from '../../support/constants'
 
 describe('general workflow tests (with actual client-server interaction and minimal data mocking)', () => {
     beforeEach(() => {
@@ -12,7 +12,7 @@ describe('general workflow tests (with actual client-server interaction and mini
     it('basic data loading tests', () => {
         cy.get('div[data-testid="loader"]').should('exist')
 
-        // a tag with something like "0.00 USD" should actually appear
+        // a span with something like "0.00 USD" should actually appear
         cy.get('span[data-testid="curr-price"]').should('exist')
 
         cy.get('li[data-testid="top-coin"]').should('exist')
@@ -63,9 +63,9 @@ describe('general workflow tests (with actual client-server interaction and mini
         cy.get('li[data-testid="portfolio-item"]').should('have.length', 2)
         cy.get('button[data-testid="close-modal-btn"]').click()
 
-        // refreshing the price diff
+        // refreshing the price diff (via page reload)
         cy.intercept(
-            `${BASE_URL}crypto.getTopCoinInfo,crypto.getPageData,crypto.getUpdatedPortfolioData*`,
+            `${BASE_SERVER_URL}crypto.getTopCoinInfo,crypto.getPageData,crypto.getUpdatedPortfolioData*`,
             (req) => {
                 req.continue((res) => {
                     // the price can't really get negative, so this is only needed to check the ability to display price difference
@@ -77,9 +77,7 @@ describe('general workflow tests (with actual client-server interaction and mini
                 })
             }
         ).as('getUpdPortfolioData')
-
         cy.reload()
-
         cy.wait('@getUpdPortfolioData')
 
         // so now it should exist
@@ -90,17 +88,21 @@ describe('general workflow tests (with actual client-server interaction and mini
             /( [+,-] ([0-9]+\.[0-9]{2,2}) \(([0-9]+\.[0-9]{2,2}) %\))/
         )
 
-        // refreshing the price diff again..
+        // refreshing the price diff (via 'refrsh' btn)
         cy.intercept(
-            `${BASE_URL}crypto.getUpdatedPortfolioData*`, (req) => {
-            req.continue((res) => {
-                const neededResult = res.body[0].result
-                neededResult.data.data = neededResult.data.data.map((item) => ({
-                    ...item,
-                    priceUsd: -1,
-                }))
-            })
-        }).as('getUpdPortfolioData_2')
+            `${BASE_SERVER_URL}crypto.getUpdatedPortfolioData*`,
+            (req) => {
+                req.continue((res) => {
+                    const neededResult = res.body[0].result
+                    neededResult.data.data = neededResult.data.data.map(
+                        (item) => ({
+                            ...item,
+                            priceUsd: -1,
+                        })
+                    )
+                })
+            }
+        ).as('getUpdPortfolioData_2')
         cy.get('button[data-testid="refresh-diff-btn"]').click()
         cy.wait('@getUpdPortfolioData_2')
 

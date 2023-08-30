@@ -15,4 +15,14 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Generic: Story = {}
+export const NotAnimatedColor: Story = {
+    args: {
+        hasAnimatedColor:false
+    }
+}
+
+export const AnimatedColor: Story = {
+    args: {
+        hasAnimatedColor:true
+    }
+}

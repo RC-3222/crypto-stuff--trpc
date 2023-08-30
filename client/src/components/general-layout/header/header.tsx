@@ -8,7 +8,7 @@ import { ViewPorfolioMenu } from '../../menus/view-portfolio-menu'
 import { PortfolioContext } from '../../../context'
 
 import styles from './header.module.scss'
-import { coinNameStr, valueStr } from '../../../utils'
+import { getCoinNameStr, getPriceDiffData, getValueStr } from '../../../utils'
 import { useDataGetters } from './hooks'
 
 export const Header = () => {
@@ -37,20 +37,16 @@ export const Header = () => {
 
     const priceStyle = useMemo(
         () =>
-            currPrice - prevPrice > 0
+            currPrice > prevPrice
                 ? styles['portfolioBlock__priceDiff_pos']
                 : styles['portfolioBlock__priceDiff_neg'],
         [currPrice, prevPrice]
     )
     const priceStr = useMemo(() => {
-        const priceDiff = currPrice - prevPrice
+        const {priceDiff, priceDiffPercent} = getPriceDiffData(currPrice, prevPrice)
         if (!priceDiff) return ''
 
-        const priceDiffPercent = Math.abs(priceDiff / prevPrice) * 100
-
-        return ` ${priceDiff > 0 ? '+' : '-'} ${Math.abs(priceDiff).toFixed(
-            2
-        )} (${priceDiffPercent.toFixed(2)} %)`
+        return ` ${currPrice > prevPrice ? '+' : '-'} ${Math.abs(priceDiff).toFixed(2)} (${priceDiffPercent.toFixed(2)} %)`
     }, [currPrice, prevPrice])
 
     const { getTopCoinData } = useDataGetters()
@@ -84,10 +80,10 @@ export const Header = () => {
                                 key={item.id}
                             >
                                 <span>
-                                    {coinNameStr(item.name, item.symbol)}
+                                    {getCoinNameStr(item.name, item.symbol)}
                                 </span>
                                 {' - '}
-                                <span>{valueStr(+item.priceUsd)} USD</span>
+                                <span>{getValueStr(+item.priceUsd)} USD</span>
                             </li>
                         ))}
                     </ul>

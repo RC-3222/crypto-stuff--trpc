@@ -4,7 +4,7 @@ import { Button } from '../../../common/button'
 import { PortfolioItem as PortItem } from '../../../../types'
 
 import styles from './portfolio-item.module.scss'
-import { valueStr } from '../../../../utils'
+import { getValueStr } from '../../../../utils'
 
 type PortfolioItemProps = {
     item: PortItem
@@ -29,7 +29,7 @@ export const PortfolioItem = ({ item }: PortfolioItemProps) => {
                 </span>
                 <div className={styles.portfolioItem__info__general}>
                     <span className={styles.portfolioItem__info__pricePerUnit}>
-                        {`Price per unit (USD): ${valueStr(item.priceUsd)}`}
+                        {`Price per unit (USD): ${getValueStr(item.priceUsd)}`}
                     </span>
                     <span
                         data-testid="coin-amount"
@@ -38,7 +38,7 @@ export const PortfolioItem = ({ item }: PortfolioItemProps) => {
                         {`Currently in portfolio: ${item.amount}`}
                     </span>
                     <span className={styles.portfolioItem__info__priceTotal}>
-                        {`Total price (USD): ${valueStr(
+                        {`Total price (USD): ${getValueStr(
                             item.priceUsd * item.amount
                         )}`}
                     </span>

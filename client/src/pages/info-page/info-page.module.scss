@@ -10,17 +10,3 @@
 
     align-items: center;
 }
-
-.title {
-    @include h2;
-}
-
-.price,
-.historyTitle {
-    @include h3;
-}
-
-.avgPrice,
-.supply {
-    @include h4;
-}

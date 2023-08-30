@@ -6,6 +6,7 @@ import { Button } from '../../components/common/button'
 import styles from './main-page.module.scss'
 import { CoinList } from '../../components/coin-list'
 import { Loader } from '../../components/common/loader'
+import { Heading } from '../../components/common/heading'
 
 import { useDataGetters } from './hooks'
 
@@ -54,7 +55,7 @@ export const MainPage = () => {
             {isLoading && <Loader />}
             {!isLoading && !!currentCoins.length && (
                 <>
-                    <h2 className={styles.title}>Available coins</h2>
+                    <Heading variant='h2'>Available coins</Heading>
                     <CoinList items={currentCoins} />
                     <div className={styles.paginationContainer}>
                         {currPage > 0 && (
@@ -79,7 +80,7 @@ export const MainPage = () => {
             )}
             {!isLoading && !currentCoins.length && (
                 <div data-testid="no-coins-message" className={styles.noCoins}>
-                    <h3>No coins here...</h3>
+                    <Heading variant='h2'>No coins here...</Heading>
                     {hasPrevPage ? (
                         <>
                             <p>But there are some on the previous page.</p>

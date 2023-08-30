@@ -45,9 +45,3 @@ export const Red: Story = {
         children: 'Button',
     },
 }
-
-export const Generic = {
-    args: {
-        children: 'Button',
-    },
-}

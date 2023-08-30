@@ -17,9 +17,21 @@
         border-radius: 50%;
         border: 6px solid $clr--green;
         border-color: $clr--green transparent $clr--green transparent;
+    }
+}
+
+.notAnimatedColor {
+    &::after {
         animation: spinner 1.2s linear infinite;
     }
 }
+
+.animatedColor {
+    &::after {
+        animation: spinner--animated-color 1.2s linear infinite;
+    }
+}
+
 
 @keyframes spinner {
     0% {
@@ -27,6 +39,23 @@
     }
 
     100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner--animated-color {
+    0% {
+        border-color: $clr--green transparent $clr--green transparent;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        border-color: darken($clr--green, 5) transparent darken($clr--green, 5) transparent;
+        transform: rotate(180deg);
+    }
+
+    100% {
+        border-color: $clr--green transparent $clr--green transparent;
         transform: rotate(360deg);
     }
 }

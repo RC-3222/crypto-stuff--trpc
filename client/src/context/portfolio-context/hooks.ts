@@ -1,6 +1,6 @@
 import { trpcReact } from '../../trpc'
 import { CoinInfo, PortfolioItem } from '../../types'
-import { coinNameStr } from '../../utils'
+import { getCoinNameStr } from '../../utils'
 
 export const useDataGetters = () => {
     const trpcContext = trpcReact.useContext()
@@ -22,7 +22,7 @@ export const useDataGetters = () => {
 
         const newPortfolioItemInfo = {
             id: id,
-            name: coinNameStr(coinData.name, coinData.symbol),
+            name: getCoinNameStr(coinData.name, coinData.symbol),
             priceUsd: +coinData.priceUsd,
             amount: amount,
         }

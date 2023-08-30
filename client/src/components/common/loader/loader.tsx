@@ -1,5 +1,9 @@
 import styles from './loader.module.scss'
 
-export const Loader = () => (
-    <div data-testid="loader" className={styles.spinner}></div>
+type LoaderProps = {
+    hasAnimatedColor?:boolean
+}
+
+export const Loader = ({hasAnimatedColor = false}:LoaderProps) => (
+    <div data-testid="loader" className={`${styles.spinner} ${hasAnimatedColor ? styles.animatedColor : styles.notAnimatedColor}`}></div>
 )

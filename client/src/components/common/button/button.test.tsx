@@ -3,15 +3,7 @@ import { Button } from './button'
 
 import styles from './button.module.scss'
 
-test('supports inner text', () => {
-    render(<Button>Button</Button>)
-
-    const btnElement = screen.getByText(/Button/i)
-
-    expect(btnElement).toBeInTheDocument()
-})
-
-test('is clickable', () => {
+test('button is clickable', () => {
     let i = 0
     render(<Button onClick={() => (i += 5)}>Button</Button>)
 
@@ -20,26 +12,26 @@ test('is clickable', () => {
     expect(i).toEqual(5)
 })
 
-describe('variants work correctly', () => {
-    test('red variant', () => {
+describe('button variants work correctly', () => {
+    test('red', () => {
         render(<Button variant="red">Button</Button>)
         const btnElement = screen.getByText(/Button/i)
 
         expect(btnElement).toBeInTheDocument()
-        expect(btnElement).toHaveClass(styles['red'])
+        expect(btnElement).toHaveClass(styles.red)
     })
-    test('green variant', () => {
+    test('green', () => {
         render(<Button variant="green">Button</Button>)
         const btnElement = screen.getByText(/Button/i)
 
         expect(btnElement).toBeInTheDocument()
-        expect(btnElement).toHaveClass(styles['green'])
+        expect(btnElement).toHaveClass(styles.green)
     })
-    test('default variant (which is green)', () => {
+    test('default (green)', () => {
         render(<Button>Button</Button>)
         const btnElement = screen.getByText(/Button/i)
 
         expect(btnElement).toBeInTheDocument()
-        expect(btnElement).toHaveClass(styles['green'])
+        expect(btnElement).toHaveClass(styles.green)
     })
 })

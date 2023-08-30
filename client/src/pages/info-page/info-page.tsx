@@ -5,10 +5,11 @@ import { useState } from 'react'
 import { HistoryChart } from '../../components/history-chart'
 import { Button } from '../../components/common/button'
 import { AddCoinMenu } from '../../components/menus/add-coin-menu'
+import { Heading } from '../../components/common/heading'
 
 import styles from './info-page.module.scss'
 import { Loader } from '../../components/common/loader'
-import { coinNameStr } from '../../utils'
+import { getCoinNameStr } from '../../utils'
 
 import { useDataGetters } from './hooks'
 
@@ -42,29 +43,17 @@ export const InfoPage = () => {
             {isLoading && <Loader />}
             {!isLoading && mainInfo && (
                 <>
-                    <h2 data-testid="coin-title" className={styles.title}>
-                        {coinNameStr(mainInfo.name, mainInfo.symbol)}
-                    </h2>
-                    <h3
-                        className={styles.price}
-                    >{`Current price (USD): ${mainInfo.priceUsd}`}</h3>
-                    {!!mainInfo.vwap24Hr && (
-                        <h4
-                            className={styles.avgPrice}
-                        >{`Average price in the last 24 hours (USD): ${mainInfo.vwap24Hr}`}</h4>
-                    )}
-                    <h4
-                        className={styles.supply}
-                    >{`Available for trading: ${mainInfo.supply}`}</h4>
+                    <Heading dataTestId="coin-title">{getCoinNameStr(mainInfo.name, mainInfo.symbol)}</Heading>
+                    <Heading variant='h3' >{`Current price (USD): ${mainInfo.priceUsd}`}</Heading>
+                    {!!mainInfo.vwap24Hr && <Heading variant='h3'>{`Average price in the last 24 hours (USD): ${mainInfo.vwap24Hr}`}</Heading>}
+                    <Heading variant='h4'>{`Available for trading: ${mainInfo.supply}`}</Heading>
                     <Button
                         dataTestid="add-btn"
                         onClick={() => setIsMenuVisible(true)}
                     >
                         Add To Portfolio
                     </Button>
-                    <h3
-                        className={styles.historyTitle}
-                    >{`Price history (USD)`}</h3>
+                    <Heading variant='h3'>{`Price history (USD)`}</Heading>
                     {!!historyInfo.length && (
                         <HistoryChart data={historyInfo} />
                     )}

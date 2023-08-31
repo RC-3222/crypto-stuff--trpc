@@ -70,7 +70,7 @@ describe('main page visual tests', () => {
 
             cy.viewport(width, height)
 
-            cy.wait(500)
+            cy.wait(300)
 
             cy.screenshot({ capture: 'fullPage', overwrite: true })
 

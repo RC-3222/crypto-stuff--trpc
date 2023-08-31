@@ -7,8 +7,7 @@ export const useDataGetters = () => {
 
     const getTopCoinData = async () => {
         try {
-            const { data } =
-                await trpcContext.crypto.getTopCoinInfo.fetch(TOP_SIZE)
+            const { data } = await trpcContext.crypto.getTopCoinInfo.fetch(TOP_SIZE)
             return data as CoinInfo[]
         } catch (err) {
             console.error(err)

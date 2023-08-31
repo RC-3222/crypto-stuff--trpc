@@ -158,7 +158,7 @@ describe('general workflow tests (with actual client-server interaction and mini
         cy.get('input[type="text"]').type('5')
         cy.get('button[data-testid="submit-btn"]').click()
 
-        // going to the coin page via link
+        // going to the coin info page via link
         cy.get('li[data-testid="coin-item"] > a').eq(0).click()
 
         // checking that the "add" button on the coin page works simmilarly to those on the
@@ -172,7 +172,7 @@ describe('general workflow tests (with actual client-server interaction and mini
 
         cy.reload()
 
-        // still on the coin page (so should be able to see a coin title (after data reloading))
+        // still on the coin info page (so should be able to see a coin title (after data reloading))
         cy.get('h2[data-testid="coin-title"]').should('exist')
 
         // going back to the previous page (which was the initial page)

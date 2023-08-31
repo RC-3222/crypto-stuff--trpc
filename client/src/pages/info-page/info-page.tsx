@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { CoinInfo, HistoryItem } from '../../types'
+import { CoinInfo, PriceHistory } from '../../types'
 import { useState } from 'react'
 import { HistoryChart } from '../../components/history-chart'
 import { Button } from '../../components/common/button'
@@ -17,7 +17,7 @@ export const InfoPage = () => {
     const params = useParams()
 
     const [mainInfo, setMainInfo] = useState<CoinInfo | null>(null)
-    const [historyInfo, setHistoryInfo] = useState<HistoryItem[]>([])
+    const [historyInfo, setHistoryInfo] = useState<PriceHistory>([])
 
     const [isMenuVisible, setIsMenuVisible] = useState(false)
 
@@ -66,7 +66,7 @@ export const InfoPage = () => {
                 </>
             )}
             {!isLoading && !mainInfo && (
-                <div className={styles.noCoinInfo}>
+                <div data-testid="no-coin-info-message" className={styles.noCoinInfo}>
                     <h3>Couldn't get any info about the selected coin</h3>
                 </div>
             )}

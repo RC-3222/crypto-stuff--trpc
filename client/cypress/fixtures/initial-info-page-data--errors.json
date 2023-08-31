@@ -1,0 +1,78 @@
+[
+    {
+        "result": {
+            "data": {
+                "data": [
+                    {
+                        "id": "bitcoin",
+                        "rank": "1",
+                        "symbol": "BTC",
+                        "name": "Bitcoin",
+                        "supply": "19460625.0000000000000000",
+                        "maxSupply": "21000000.0000000000000000",
+                        "marketCapUsd": "530662345212.0166354518560625",
+                        "volumeUsd24Hr": "4081580662.4989790959846849",
+                        "priceUsd": "27268.5150251863254881",
+                        "changePercent24Hr": "-1.2998077972333106",
+                        "vwap24Hr": "27367.9226140705388828",
+                        "explorer": "https://blockchain.info/"
+                    },
+                    {
+                        "id": "ethereum",
+                        "rank": "2",
+                        "symbol": "ETH",
+                        "name": "Ethereum",
+                        "supply": "120131756.1693597400000000",
+                        "maxSupply": null,
+                        "marketCapUsd": "204818040229.2946114856399032",
+                        "volumeUsd24Hr": "1752540105.6137966032567639",
+                        "priceUsd": "1704.9450266967342511",
+                        "changePercent24Hr": "-1.5275628530396226",
+                        "vwap24Hr": "1715.3827772961318422",
+                        "explorer": "https://etherscan.io/"
+                    },
+                    {
+                        "id": "tether",
+                        "rank": "3",
+                        "symbol": "USDT",
+                        "name": "Tether",
+                        "supply": "82842337234.0993000000000000",
+                        "maxSupply": null,
+                        "marketCapUsd": "82854630465.8292952429171914",
+                        "volumeUsd24Hr": "7570783980.3449921084238090",
+                        "priceUsd": "1.0001483931059943",
+                        "changePercent24Hr": "-0.0188975260260884",
+                        "vwap24Hr": "0.9999389733631738",
+                        "explorer": "https://www.omniexplorer.info/asset/31"
+                    }
+                ],
+                "timestamp": 1693429645887
+            }
+        }
+    },
+    {
+        "error": {
+            "message": "Couldn't get any data for the specified currency (ID = gffgjfgjgjhggfhjhgj)",
+            "code": -32004,
+            "data": {
+                "code": "NOT_FOUND",
+                "httpStatus": 404,
+                "stack": "TRPCError: Couldn't get any data for the specified currency (ID = gffgjfgjgjhggfhjhgj)",
+                "path": "crypto.getCoinInfo"
+            }
+        }
+    },
+    {
+        "error": {
+            "message": "Couldn't get any history for the specified currency (ID = gffgjfgjgjhggfhjhgj)",
+            "code": -32004,
+            "data": {
+                "code": "NOT_FOUND",
+                "httpStatus": 404,
+                "stack": "TRPCError: Couldn't get any history for the specified currency (ID = gffgjfgjgjhggfhjhgj)",
+                "path": "crypto.getCoinHistory"
+            }
+        }
+    },
+    { "result": { "data": { "data": [] } } }
+]

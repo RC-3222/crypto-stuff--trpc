@@ -26,7 +26,7 @@ export const Coin = ({ item }: CoinProps) => {
 
     return (
         <li data-testid="coin-item" className={styles.coinItem}>
-            <Link to={`/coins/${item.id}`}>
+            <Link data-testid='coin-info-link' to={`/coins/${item.id}`}>
                 <span>{nameStr}</span>
                 {' - '}
                 <span>{`${valStr} USD`}</span>

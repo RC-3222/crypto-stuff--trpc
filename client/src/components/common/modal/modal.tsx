@@ -16,8 +16,8 @@ export const Modal = ({ children, onHide }: ModalProps) => {
 
     return createPortal(
         <div className={styles.wrapper}>
-            <div className={styles.backdrop}></div>
-            <div className={styles.container}>
+            <div data-testid="backdrop" className={styles.backdrop}></div>
+            <div data-testid="modal" className={styles.container}>
                 <button
                     type="button"
                     data-testid="close-modal-btn"

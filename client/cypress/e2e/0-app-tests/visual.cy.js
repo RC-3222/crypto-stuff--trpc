@@ -70,7 +70,7 @@ describe('main page visual tests', () => {
 
             cy.viewport(width, height)
 
-            cy.wait(700)
+            cy.wait(500)
 
             cy.screenshot({ capture: 'fullPage', overwrite: true })
 
@@ -92,7 +92,7 @@ describe('info page visual tests', () => {
         )
         cy.intercept(
             `${BASE_SERVER_URL}crypto.getTopCoinInfo,crypto.getCoinInfo,crypto.getCoinHistory,crypto.getUpdatedPortfolioData*`,
-            { fixture: 'initial-info-page-data.json' }
+            { fixture: 'initial-info-page-data--filled.json' }
         ).as('getData')
 
         cy.wait('@getData')
@@ -129,7 +129,7 @@ describe('portfolio info modal tests', () => {
         )
         cy.intercept(
             `${BASE_SERVER_URL}crypto.getTopCoinInfo,crypto.getCoinInfo,crypto.getCoinHistory,crypto.getUpdatedPortfolioData*`,
-            { fixture: 'initial-info-page-data.json' }
+            { fixture: 'initial-info-page-data--filled.json' }
         ).as('getData')
 
         cy.wait('@getData')
@@ -142,7 +142,7 @@ describe('portfolio info modal tests', () => {
 
             cy.get('button[data-testid="more-info-btn"]').click();
 
-            cy.wait(500)
+            cy.wait(300)
 
             cy.screenshot({ capture: 'viewport', overwrite: true })
 
@@ -151,6 +151,8 @@ describe('portfolio info modal tests', () => {
                 'background-color',
                 'rgb(0, 128, 85)'
             )
+            
+            cy.get('button[data-testid="close-modal-btn"]').should('be.visible')
         })
     }
 })
@@ -165,7 +167,7 @@ describe('add coin modal tests', () => {
         )
         cy.intercept(
             `${BASE_SERVER_URL}crypto.getTopCoinInfo,crypto.getCoinInfo,crypto.getCoinHistory,crypto.getUpdatedPortfolioData*`,
-            { fixture: 'initial-info-page-data.json' }
+            { fixture: 'initial-info-page-data--filled.json' }
         ).as('getData')
 
         cy.wait('@getData')
@@ -178,7 +180,7 @@ describe('add coin modal tests', () => {
 
             cy.get('button[data-testid="add-btn"]').click();
 
-            cy.wait(500)
+            cy.wait(300)
 
             cy.screenshot(`add coin modal tests -- ${width}x${height} - no validation error`,{ capture: 'viewport', overwrite: true })
 
@@ -186,7 +188,7 @@ describe('add coin modal tests', () => {
 
             cy.get('@submBtn').click()
 
-            cy.wait(500)
+            cy.wait(300)
 
             cy.screenshot(`add coin modal tests -- ${width}x${height} - validation error`,{ capture: 'viewport', overwrite: true })
 
@@ -201,6 +203,9 @@ describe('add coin modal tests', () => {
                 'color',
                 'rgb(236, 55, 19)'
             )
+
+            cy.get('@submBtn').should('be.visible')
+            cy.get('button[data-testid="close-modal-btn"]').should('be.visible')
         })
     }
 })

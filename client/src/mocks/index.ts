@@ -1,6 +1,4 @@
-import { HistoryItem } from '../types'
-
-export const historyData: HistoryItem[] = [
+export const historyData = [
     {
         priceUsd: '6379.3997635993342453',
         time: 1530403200000,
@@ -144,5 +142,35 @@ export const historyData: HistoryItem[] = [
     {
         priceUsd: '6987.2119251945676799',
         time: 1533427200000,
+    },
+]
+
+export const CoinsData = [
+    {
+        id: "bitcoin-1",
+        rank: "1",
+        symbol: "BTC",
+        name: "Bitcoin",
+        supply: "200.0000000000000000",
+        priceUsd: "100.0000000000000000",
+        vwap24Hr: "100.0000000000000000"
+    },
+    {
+        id: "bitcoin-2",
+        rank: "2",
+        symbol: "BTC2",
+        name: "Bitcoin",
+        supply: "50.0000000000000000",
+        priceUsd: "200.0000000000000000",
+        vwap24Hr: "200.0000000000000000"
+    },
+    {
+        id: "bitcoin-3",
+        rank: "3",
+        symbol: "BTC3",
+        name: "Bitcoin",
+        supply: "100.0000000000000000",
+        priceUsd: "150.0000000000000000",
+        vwap24Hr: "150.0000000000000000"
     },
 ]

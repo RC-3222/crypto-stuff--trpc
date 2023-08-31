@@ -6,10 +6,11 @@ import {
     CartesianGrid,
     Area,
 } from 'recharts'
-import { HistoryItem } from '../../types/history'
+
+import type { PriceHistory } from '../../types'
 
 type HistoryChartProps = {
-    data: HistoryItem[]
+    data: PriceHistory
     testing?: boolean
 }
 
@@ -29,7 +30,6 @@ export const HistoryChart = ({ data, testing = false }: HistoryChartProps) => {
                 left: 20,
                 bottom: 5,
             }}
-            data-testid="history-chart"
             role="chart"
         >
             <XAxis dataKey="time" tickFormatter={formatXAxis} />

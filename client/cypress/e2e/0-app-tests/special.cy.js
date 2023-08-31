@@ -1,6 +1,6 @@
 import { BASE_SERVER_URL } from '../../support/constants'
 
-describe('"visiting page without any data" tests', () => {
+describe('main page special tests', () => {
     beforeEach(() => {
         cy.visit('/')
 
@@ -10,7 +10,7 @@ describe('"visiting page without any data" tests', () => {
         ).as('getData')
     })
 
-    it(`without any data on the previous page`, () => {
+    it(`visiting empty page without any data on the previous page`, () => {
         cy.intercept(
             `${BASE_SERVER_URL}crypto.getPageData*`,
             {fixture: 'page-data--filled.json' }
@@ -23,7 +23,7 @@ describe('"visiting page without any data" tests', () => {
         cy.get('button[data-testid="no-coins-btn--prev-page"]').should('exist')
     })
 
-    it(`with some data on the previous page`, () => {
+    it(`visiting empty page with some data on the previous page`, () => {
         cy.intercept(
             `${BASE_SERVER_URL}crypto.getPageData*`,
             {fixture: 'page-data--empty.json' }
@@ -34,5 +34,20 @@ describe('"visiting page without any data" tests', () => {
 
         cy.get('div[data-testid="no-coins-message"]').should('exist')
         cy.get('button[data-testid="no-coins-btn--initial-page"]').should('exist')
+    })
+})
+
+describe('coin info page special tests', () => {
+    it(`visiting info page for non-existent coin`, () => {
+        cy.visit('/#/coins/gffgjfgjgjhggfhjhgj')
+
+        cy.intercept(
+            `${BASE_SERVER_URL}crypto.getTopCoinInfo,crypto.getCoinInfo,crypto.getCoinHistory,crypto.getUpdatedPortfolioData*`,
+            {fixture: 'initial-info-page-data--errors.json' }
+        ).as('getData')
+
+        cy.wait('@getData')
+
+        cy.get('div[data-testid="no-coin-info-message"]').should('exist')
     })
 })
